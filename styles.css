@@ -19,6 +19,7 @@ div img {
   height: 50%; */
   width: 100%;
   object-fit: cover;
+  border-radius: 1rem;
 }
 
 /* For Tablets and larger screens */
@@ -26,5 +27,20 @@ div img {
   div {
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For Laptops (1024px) and wider screens */
+@media screen and (min-width: 1024px) {
+  div {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* ONLY THE THIRD IMAGE TAKES TWO COLUMNS AND TWO ROWS */
+  /* .third { */
+  div img:nth-child(3) {
+    grid-row: 1 / span 2;
+    grid-column: 2 / span 2;
   }
 }
